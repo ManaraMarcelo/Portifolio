@@ -121,7 +121,7 @@ export default function App() {
 
                 /* ATUALIZAÇÃO: Estilização da Barra de Rolagem */
                 .custom-scrollbar::-webkit-scrollbar {
-                    width: 12px; /* Largura total da área da barra */
+                    width: 8px; /* Largura total da área da barra */
                 }
 
                 .custom-scrollbar::-webkit-scrollbar-track {
@@ -131,7 +131,7 @@ export default function App() {
                 .custom-scrollbar::-webkit-scrollbar-thumb {
                     background-color: rgba(255, 255, 255, 0.25); /* Cor da barra */
                     border-radius: 20px; /* Bordas arredondadas */
-                    border: 3px solid transparent; /* Borda transparente para criar espaçamento */
+                    border: 6px solid transparent; /* Borda transparente para criar espaçamento */
                     background-clip: content-box; /* Faz a borda ser "para dentro" */
                 }
                 
