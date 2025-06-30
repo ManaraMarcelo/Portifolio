@@ -30,7 +30,7 @@ export default function App() {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left, y = e.clientY - rect.top;
             const { width, height } = rect;
-            const rotateX = (y / height - 0.5) * -8;
+            const rotateX = (y / height - 0.5) * -8; // Rotação mais sutil
             const rotateY = (x / width - 0.5) * 8;
             card.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         };
@@ -65,6 +65,7 @@ export default function App() {
                     border: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
+                /* Container do Fundo Animado */
                 .pixel-background {
                     position: fixed;
                     top: 0;
@@ -74,6 +75,7 @@ export default function App() {
                     z-index: 0;
                 }
 
+                /* Animação dos pixels */
                 @keyframes movePixels {
                     from { transform: translateY(0); }
                     to { transform: translateY(-100vh); }
@@ -83,7 +85,7 @@ export default function App() {
                     position: absolute;
                     width: 100%;
                     height: 100vh;
-                    top: 100vh;
+                    top: 100vh; /* Começam fora da tela, abaixo */
                     will-change: transform;
                 }
                 
@@ -119,7 +121,7 @@ export default function App() {
 
                 /* ATUALIZAÇÃO: Estilização da Barra de Rolagem */
                 .custom-scrollbar::-webkit-scrollbar {
-                    width: 14px; /* Largura total da área da barra */
+                    width: 8px; /* Largura total da área da barra */
                 }
 
                 .custom-scrollbar::-webkit-scrollbar-track {
@@ -127,16 +129,16 @@ export default function App() {
                 }
 
                 .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background-color: rgba(255, 255, 255, 0.2); /* Cor da barra */
+                    background-color: rgba(255, 255, 255, 0.25); /* Cor da barra */
                     border-radius: 20px; /* Bordas arredondadas */
-                    border: 4px solid transparent; /* Borda transparente para criar espaçamento */
+                    border: 6px solid transparent; /* Borda transparente para criar espaçamento */
                     background-clip: content-box; /* Faz a borda ser "para dentro" */
                 }
                 
                 /* Compatibilidade com Firefox */
                 .custom-scrollbar {
                     scrollbar-width: thin;
-                    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+                    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
                 }
                 `}
             </style>
@@ -144,77 +146,79 @@ export default function App() {
             <PixelBackground />
             
             <div className="flex min-h-screen items-center justify-center p-4 text-white sm:p-6 lg:p-8 relative z-10">
-                {/* ATUALIZAÇÃO: Estrutura da barra de rolagem corrigida */}
-                <div ref={cardRef} className="glass-effect w-full max-w-4xl rounded-3xl shadow-2xl transition-transform duration-300 ease-out flex flex-col max-h-[90vh]">
-                    <div className="custom-scrollbar overflow-y-auto">
-                        <div className="p-6 md:p-10">
-                            {/* Conteúdo do Portfólio */}
-                            <header className="flex flex-col items-center text-center md:flex-row md:text-left">
-                                <img 
-                                    src="https://github.com/ManaraMarcelo.png" 
-                                    alt="Foto do Perfil de Marcelo Manara" 
-                                    className="h-24 w-24 rounded-full border-2 border-white/50 shadow-lg md:h-32 md:w-32"
-                                    onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/128x128/333333/FFFFFF?text=MM'; }}
-                                />
-                                <div className="mt-4 md:ml-8 md:mt-0">
-                                    <h1 className="text-4xl font-bold md:text-5xl">Marcelo Manara</h1>
-                                    <p className="mt-1 text-xl text-white/80">DevSecOps & Cloud Engineer</p>
-                                    <div className="mt-4 flex justify-center space-x-4 md:justify-start">
-                                        <a href="https://github.com/ManaraMarcelo" target="_blank" rel="noopener noreferrer" className="text-white/70 transition-colors hover:text-white" aria-label="GitHub"><GitHubIcon /></a>
-                                        <a href="https://www.linkedin.com/in/marcelo-manara" target="_blank" rel="noopener noreferrer" className="text-white/70 transition-colors hover:text-white" aria-label="LinkedIn"><LinkedInIcon /></a>
+                <div ref={cardRef} className="glass-effect w-full max-w-4xl rounded-3xl shadow-2xl transition-transform duration-300 ease-out">
+                    {/* Adicionada a classe custom-scrollbar aqui */}
+                    <div className="custom-scrollbar max-h-[90vh] overflow-y-auto p-6 md:p-10">
+                        {/* Conteúdo do Portfólio */}
+                        <header className="flex flex-col items-center text-center md:flex-row md:text-left">
+                            <img 
+                                src="https://github.com/ManaraMarcelo.png" 
+                                alt="Foto do Perfil de Marcelo Manara" 
+                                className="h-24 w-24 rounded-full border-2 border-white/50 shadow-lg md:h-32 md:w-32"
+                                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/128x128/333333/FFFFFF?text=MM'; }}
+                            />
+                            <div className="mt-4 md:ml-8 md:mt-0">
+                                {/* ATUALIZAÇÃO: Fonte mais leve */}
+                                <h1 className="text-4xl font-bold md:text-5xl">Marcelo Manara</h1>
+                                <p className="mt-1 text-xl text-white/80">DevSecOps & Cloud Engineer</p>
+                                <div className="mt-4 flex justify-center space-x-4 md:justify-start">
+                                    <a href="https://github.com/ManaraMarcelo" target="_blank" rel="noopener noreferrer" className="text-white/70 transition-colors hover:text-white" aria-label="GitHub"><GitHubIcon /></a>
+                                    <a href="https://www.linkedin.com/in/marcelo-manara" target="_blank" rel="noopener noreferrer" className="text-white/70 transition-colors hover:text-white" aria-label="LinkedIn"><LinkedInIcon /></a>
+                                </div>
+                            </div>
+                        </header>
+
+                        <main>
+                            <section className="mt-8 border-t border-white/20 pt-6">
+                                {/* ATUALIZAÇÃO: Fonte mais leve */}
+                                <h2 className="text-2xl font-semibold">Resumo Profissional</h2>
+                                <p className="mt-2 leading-relaxed text-white/90">
+                                    Estudante de Análise e Desenvolvimento de Sistemas com grande interesse em <strong>segurança, automação e desenvolvimento de soluções inovadoras</strong>. Minha missão é ajudar pessoas por meio da tecnologia, criando aplicações seguras, eficientes e visualmente impactantes.
+                                </p>
+                            </section>
+                            
+                            <section className="mt-8 border-t border-white/20 pt-6">
+                                 {/* ATUALIZAÇÃO: Fonte mais leve */}
+                                 <h2 className="text-2xl font-semibold">Tecnologias e Habilidades</h2>
+                                <div className="mt-4 space-y-4">
+                                    <div>
+                                        <h3 className="mb-2 font-semibold">Linguagens & Frameworks:</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Python', 'C# + .NET', 'C/C++', 'Bash', 'SQL', 'HTML/CSS'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{skill}</span>)}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 className="mb-2 font-semibold">Cloud & DevOps:</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                             {['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD', 'Linux', 'Git'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{skill}</span>)}
+                                        </div>
                                     </div>
                                 </div>
-                            </header>
+                            </section>
 
-                            <main>
-                                <section className="mt-8 border-t border-white/20 pt-6">
-                                    <h2 className="text-2xl font-semibold">Resumo Profissional</h2>
-                                    <p className="mt-2 leading-relaxed text-white/90">
-                                        Estudante de Análise e Desenvolvimento de Sistemas com grande interesse em <strong>segurança, automação e desenvolvimento de soluções inovadoras</strong>. Minha missão é ajudar pessoas por meio da tecnologia, criando aplicações seguras, eficientes e visualmente impactantes.
-                                    </p>
-                                </section>
-                                
-                                <section className="mt-8 border-t border-white/20 pt-6">
-                                     <h2 className="text-2xl font-semibold">Tecnologias e Habilidades</h2>
-                                    <div className="mt-4 space-y-4">
-                                        <div>
-                                            <h3 className="mb-2 font-semibold">Linguagens & Frameworks:</h3>
-                                            <div className="flex flex-wrap gap-2">
-                                                {['Python', 'C# + .NET', 'C/C++', 'Bash', 'SQL', 'HTML/CSS'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium">{skill}</span>)}
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 className="mb-2 font-semibold">Cloud & DevOps:</h3>
-                                            <div className="flex flex-wrap gap-2">
-                                                 {['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD', 'Linux', 'Git'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium">{skill}</span>)}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section className="mt-8 border-t border-white/20 pt-6">
-                                    <h2 className="text-2xl font-semibold">Projetos em Destaque</h2>
-                                    <div className="mt-4 grid gap-4 md:grid-cols-2">
-                                        <a href="https://github.com/ManaraMarcelo/Wordpress-Scalable-with-AWS" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                            <h3 className="font-semibold">WordPress Escalável na AWS</h3>
-                                            <p className="mt-1 text-sm text-white/80">Infraestrutura com alta disponibilidade usando EC2, RDS, EFS e Auto Scaling.</p>
-                                        </a>
-                                        <a href="https://github.com/ManaraMarcelo/Server-Monitoring-System" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                            <h3 className="font-semibold">Monitoramento de Servidor Linux</h3>
-                                            <p className="mt-1 text-sm text-white/80">Scripts em Bash/Python para monitorar Nginx e notificar via Telegram.</p>
-                                        </a>
-                                        <a href="https://github.com/ManaraMarcelo/DeployManager" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                            <h3 className="font-semibold">API CRUD 'DeployManager'</h3>
-                                            <p className="mt-1 text-sm text-white/80">API RESTful com ASP.NET Core e SQL Server.</p>
-                                        </a>
-                                        <a href="https://github.com/ManaraMarcelo/TCC-Eletronica" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                            <h3 className="font-semibold">Automação de Aquário (TCC)</h3>
-                                            <p className="mt-1 text-sm text-white/80">Sistema eletrônico em C++ para controle de temperatura e alimentação.</p>
-                                        </a>
-                                    </div>
-                                </section>
-                            </main>
-                        </div>
+                            <section className="mt-8 border-t border-white/20 pt-6">
+                                {/* ATUALIZAÇÃO: Fonte mais leve */}
+                                <h2 className="text-2xl font-semibold">Projetos em Destaque</h2>
+                                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                                    <a href="https://github.com/ManaraMarcelo/Wordpress-Scalable-with-AWS" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                        <h3 className="font-semibold">WordPress Escalável na AWS</h3>
+                                        <p className="mt-1 text-sm text-white/80">Infraestrutura com alta disponibilidade usando EC2, RDS, EFS e Auto Scaling.</p>
+                                    </a>
+                                    <a href="https://github.com/ManaraMarcelo/Server-Monitoring-System" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                        <h3 className="font-semibold">Monitoramento de Servidor Linux</h3>
+                                        <p className="mt-1 text-sm text-white/80">Scripts em Bash/Python para monitorar Nginx e notificar via Telegram.</p>
+                                    </a>
+                                    <a href="https://github.com/ManaraMarcelo/DeployManager" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                        <h3 className="font-semibold">API CRUD 'DeployManager'</h3>
+                                        <p className="mt-1 text-sm text-white/80">API RESTful com ASP.NET Core e SQL Server.</p>
+                                    </a>
+                                    <a href="https://github.com/ManaraMarcelo/TCC-Eletronica" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                        <h3 className="font-semibold">Automação de Aquário (TCC)</h3>
+                                        <p className="mt-1 text-sm text-white/80">Sistema eletrônico em C++ para controle de temperatura e alimentação.</p>
+                                    </a>
+                                </div>
+                            </section>
+                        </main>
                     </div>
                 </div>
             </div>
