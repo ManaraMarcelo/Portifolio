@@ -200,19 +200,19 @@ export default function App() {
                                 {/* ATUALIZAÇÃO: Fonte mais leve */}
                                 <h2 className="text-2xl font-semibold">Projetos em Destaque</h2>
                                 <div className="mt-4 grid gap-4 md:grid-cols-2">
-                                    <a href="https://github.com/ManaraMarcelo/Wordpress-Scalable-with-AWS" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                    <a href="https://github.com/ManaraMarcelo/Sistema_Escalonavel_AWS-WordPress" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
                                         <h3 className="font-semibold">WordPress Escalável na AWS</h3>
                                         <p className="mt-1 text-sm text-white/80">Infraestrutura com alta disponibilidade usando EC2, RDS, EFS e Auto Scaling.</p>
                                     </a>
-                                    <a href="https://github.com/ManaraMarcelo/Server-Monitoring-System" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                    <a href="https://github.com/ManaraMarcelo/Sistema_Monitoramento_de_Servidor_Linux-AWS" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
                                         <h3 className="font-semibold">Monitoramento de Servidor Linux</h3>
                                         <p className="mt-1 text-sm text-white/80">Scripts em Bash/Python para monitorar Nginx e notificar via Telegram.</p>
                                     </a>
-                                    <a href="https://github.com/ManaraMarcelo/DeployManager" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                    <a href="https://github.com/ManaraMarcelo/Deploy_Manager" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
                                         <h3 className="font-semibold">API CRUD 'DeployManager'</h3>
                                         <p className="mt-1 text-sm text-white/80">API RESTful com ASP.NET Core e SQL Server.</p>
                                     </a>
-                                    <a href="https://github.com/ManaraMarcelo/TCC-Eletronica" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
+                                    <a href="https://github.com/ManaraMarcelo/TCC_Eletronica_Aquario_Automatizado" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
                                         <h3 className="font-semibold">Automação de Aquário (TCC)</h3>
                                         <p className="mt-1 text-sm text-white/80">Sistema eletrônico em C++ para controle de temperatura e alimentação.</p>
                                     </a>
