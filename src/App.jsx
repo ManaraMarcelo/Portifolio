@@ -158,7 +158,6 @@ export default function App() {
                                 onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/128x128/333333/FFFFFF?text=MM'; }}
                             />
                             <div className="mt-4 md:ml-8 md:mt-0">
-                                {/* ATUALIZAÇÃO: Fonte mais leve */}
                                 <h1 className="text-4xl font-bold md:text-5xl">Marcelo Manara</h1>
                                 <p className="mt-1 text-xl text-white/80">DevSecOps & Cloud Engineer</p>
                                 <div className="mt-4 flex justify-center space-x-4 md:justify-start">
@@ -170,50 +169,48 @@ export default function App() {
 
                         <main>
                             <section className="mt-8 border-t border-white/20 pt-6">
-                                {/* ATUALIZAÇÃO: Fonte mais leve */}
-                                <h2 className="text-2xl font-semibold">Resumo Profissional</h2>
+                                <h2 className="text-2xl font-medium">Resumo Profissional</h2>
                                 <p className="mt-2 leading-relaxed text-white/90">
-                                    Estudante de Análise e Desenvolvimento de Sistemas com grande interesse em <strong>segurança, automação e desenvolvimento de soluções inovadoras</strong>. Minha missão é ajudar pessoas por meio da tecnologia, criando aplicações seguras, eficientes e visualmente impactantes.
+                                    Profissional em início de carreira na área de Cloud e DevSecOps, com experiência prática em automação de esteiras CI/CD, infraestrutura como código (AWS) e conteinerização com Docker e Kubernetes. Atualmente cursando Análise e Desenvolvimento de Sistemas e finalizando o programa de bolsas na Compass UOL. Apaixonado por segurança, otimização de sistemas e pela criação de soluções inovadoras que sejam eficientes e visualmente impactantes para o usuário.
                                 </p>
                             </section>
                             
                             <section className="mt-8 border-t border-white/20 pt-6">
-                                 {/* ATUALIZAÇÃO: Fonte mais leve */}
-                                 <h2 className="text-2xl font-semibold">Tecnologias e Habilidades</h2>
+
+                                 <h2 className="text-2xl font-medium">Tecnologias e Habilidades</h2>
                                 <div className="mt-4 space-y-4">
                                     <div>
-                                        <h3 className="mb-2 font-semibold">Linguagens & Frameworks:</h3>
+                                        <h3 className="mb-2 font-medium">Linguagens & Frameworks:</h3>
                                         <div className="flex flex-wrap gap-2">
-                                            {['Python', 'C# + .NET', 'C/C++', 'Bash', 'SQL', 'HTML/CSS'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{skill}</span>)}
+                                            {['Python', 'C# + .NET', 'C/C++', 'Bash', 'SQL', 'HTML/CSS'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium">{skill}</span>)}
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="mb-2 font-semibold">Cloud & DevOps:</h3>
+                                        <h3 className="mb-2 font-medium">Cloud & DevOps:</h3>
                                         <div className="flex flex-wrap gap-2">
-                                             {['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD', 'Linux', 'Git'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{skill}</span>)}
+                                             {['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD', 'Linux', 'Git'].map(skill => <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium">{skill}</span>)}
                                         </div>
                                     </div>
                                 </div>
                             </section>
 
                             <section className="mt-8 border-t border-white/20 pt-6">
-                                {/* ATUALIZAÇÃO: Fonte mais leve */}
-                                <h2 className="text-2xl font-semibold">Projetos em Destaque</h2>
+                                <h2 className="text-2xl font-medium">Projetos em Destaque</h2>
                                 <div className="mt-4 grid gap-4 md:grid-cols-2">
                                     <a href="https://github.com/ManaraMarcelo/Sistema_Escalonavel_AWS-WordPress" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                        <h3 className="font-semibold">WordPress Escalável na AWS</h3>
+                                        <h3 className="font-medium">WordPress Escalável na AWS</h3>
                                         <p className="mt-1 text-sm text-white/80">Infraestrutura com alta disponibilidade usando EC2, RDS, EFS e Auto Scaling.</p>
                                     </a>
                                     <a href="https://github.com/ManaraMarcelo/Sistema_Monitoramento_de_Servidor_Linux-AWS" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                        <h3 className="font-semibold">Monitoramento de Servidor Linux</h3>
+                                        <h3 className="font-medium">Monitoramento de Servidor Linux</h3>
                                         <p className="mt-1 text-sm text-white/80">Scripts em Bash/Python para monitorar Nginx e notificar via Telegram.</p>
                                     </a>
                                     <a href="https://github.com/ManaraMarcelo/Deploy_Manager" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                        <h3 className="font-semibold">API CRUD 'DeployManager'</h3>
+                                        <h3 className="font-medium">API CRUD 'DeployManager'</h3>
                                         <p className="mt-1 text-sm text-white/80">API RESTful com ASP.NET Core e SQL Server.</p>
                                     </a>
                                     <a href="https://github.com/ManaraMarcelo/TCC_Eletronica_Aquario_Automatizado" target="_blank" rel="noopener noreferrer" className="glass-effect block transform rounded-xl p-4 transition-all duration-300 hover:border-white/50 hover:scale-105">
-                                        <h3 className="font-semibold">Automação de Aquário (TCC)</h3>
+                                        <h3 className="font-medium">Automação de Aquário (TCC)</h3>
                                         <p className="mt-1 text-sm text-white/80">Sistema eletrônico em C++ para controle de temperatura e alimentação.</p>
                                     </a>
                                 </div>
